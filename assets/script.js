@@ -126,7 +126,7 @@ function toggleFaq(btn) {
 }
 
 // ── CALCULATOR ──
-var calcPrices = [2999, 3000, 5000, 2000, 1500, 999, 1200, 2500];
+var calcPrices = [4999, 3000, 20000, 2000, 3000, 499, 1200, 2500];
 function toggleCalc(i) {
   var cb = document.getElementById('cb' + i);
   var item = document.getElementById('ci' + i);
