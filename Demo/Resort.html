@@ -386,6 +386,36 @@
             z-index: 1;
             pointer-events: none;
         }
+
+        /* Target mobile and tablets */
+@media (max-width: 768px) {
+    html, body {
+        /* Prevents the 'pull-to-the-side' behavior */
+        overflow-x: hidden !important;
+        position: relative;
+        width: 100%;
+        /* Stops the rubber-band bouncing into white space */
+        overscroll-behavior-x: none; 
+    }
+
+    /* Force all major containers to stay within the phone's width */
+    section, nav, footer, .max-w-7xl {
+        width: 100% !important;
+        max-width: 100vw !important;
+        overflow: hidden !important;
+    }
+
+    /* Handle the 'floating' elements that usually cause leaks */
+    .liquid-blob, #hero-3d-canvas, .cursor-glow {
+        display: none !important; /* Often best to hide complex blurs on mobile */
+    }
+
+    /* Ensure no text or images push the width */
+    * {
+        word-wrap: break-word;
+        box-sizing: border-box !important;
+    }
+}
     </style>
 </head>
 <body class="antialiased bg-darker text-white">
