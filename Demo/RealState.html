@@ -816,53 +816,56 @@ kbd{display:inline-flex;align-items:center;justify-content:center;background:var
 }
 
 @media (max-width: 768px) {
-    /* 1. Force the main container to stack vertically */
-    /* This targets the div that holds both the sidebar and the grid */
-    [class*="properties-layout"], 
-    [class*="listing-wrapper"],
-    .page-properties > div,
-    main > div.flex { 
+    /* 1. Force the side-by-side layout to stack vertically */
+    .listing-layout {
         display: flex !important;
         flex-direction: column !important;
-        width: 100% !important;
-        overflow-x: hidden !important;
+        gap: 30px;
+        padding: 0 15px !important;
     }
 
-    /* 2. Fix the Sidebar (Refine Search) */
-    /* This makes sure it doesn't stay 'sticky' or fixed width */
-    [class*="sidebar"], 
-    [class*="filter-section"] {
+    /* 2. Make the filter sidebar full width and remove the 'sticky' behavior */
+    .filter-sidebar {
         width: 100% !important;
         max-width: 100% !important;
         position: relative !important;
         top: 0 !important;
-        margin: 0 !important;
         padding: 20px !important;
-        border: none !important;
+        border-right: none !important;
+        border-bottom: 1px solid rgba(201,169,110,0.1);
+        margin-bottom: 20px;
     }
 
-    /* 3. Fix the Content Area (where the cards are) */
-    [class*="content-area"],
-    [class*="results-section"] {
+    /* 3. Make the main content area full width */
+    .listing-main {
         width: 100% !important;
-        padding: 10px !important;
+        padding: 0 !important;
     }
 
-    /* 4. Force Grid to Single Column */
-    [class*="grid"], 
-    [class*="list-container"] {
+    /* 4. Ensure the grid of properties only shows 1 card per row */
+    .listing-grid {
         display: grid !important;
-        grid-template-columns: 1fr !important; /* Forces one card per row */
-        width: 100% !important;
+        grid-template-columns: 1fr !important; /* Forces vertical stack */
         gap: 20px !important;
+        width: 100% !important;
     }
 
-    /* 5. Fix Property Cards */
-    .property-card {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
+    /* 5. Fix the toolbar (Search count & Sort) */
+    .listing-toolbar {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .listing-toolbar > div {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    /* 6. Hide the view toggle (Grid/List) on mobile as it usually breaks layouts */
+    .view-toggle {
+        display: none !important;
     }
 }
 
@@ -1114,6 +1117,7 @@ kbd{display:inline-flex;align-items:center;justify-content:center;background:var
 </div>
 
 <!-- ======= LISTINGS PAGE ======= -->
+ 
 <div class="page" id="page-listings">
   <section style="padding-top:110px">
     <div class="breadcrumb reveal"><a href="#" onclick="showPage('home')">Home</a><span class="breadcrumb-sep">›</span><span>Properties</span></div>
