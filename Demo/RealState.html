@@ -26,7 +26,7 @@
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;cursor:none;transition:background 0.3s,color 0.3s}
+body{font-family:'DM Sans',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;transition:background 0.3s,color 0.3s}
 ::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--black)}::-webkit-scrollbar-thumb{background:var(--gold-dark);border-radius:2px}
 
 /* CURSOR */
@@ -627,82 +627,130 @@ kbd{display:inline-flex;align-items:center;justify-content:center;background:var
 
 
 /* horizontal overflow */
-html, body {
-  overflow-x: hidden;
-  max-width: 100%;
+/* ========== CRITICAL MOBILE OVERRIDES ========== */
+
+@media (max-width: 768px) {
+    /* 1. Reset Global Spacing & Layout */
+    body, html {
+        overflow-x: hidden;
+        cursor: auto; /* Reverting to default cursor for touch */
+    }
+    
+    section, footer, nav, .search-section {
+        padding: 40px 20px !important; /* Reducing huge desktop side paddings */
+    }
+
+    nav {
+        padding: 15px 20px !important;
+    }
+
+    .nav-links, .nav-actions .btn-ghost {
+        display: none; /* Hide links on mobile - use a burger menu if you have one */
+    }
+
+    /* 2. Fix the "Thin Row" Search Card */
+    .search-card {
+        margin-top: -20px;
+        padding: 20px;
+    }
+
+    .search-row {
+        grid-template-columns: 1fr !important; /* Stack every field vertically */
+        gap: 15px;
+    }
+
+    .search-btn {
+        width: 100%; /* Full width button for better thumb reach */
+        padding: 15px;
+    }
+
+    /* 3. Hero Section Fixes */
+    .hero {
+        min-height: 80vh;
+        text-align: center;
+    }
+
+    .hero-content {
+        padding: 0 20px;
+    }
+
+    .hero-img-panel {
+        width: 100%;
+        opacity: 0.2; /* Fade background image more on mobile for text clarity */
+    }
+
+    .hero-ctas {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-ctas a {
+        width: 100%;
+    }
+
+    /* 4. Grid Resets (Property, Categories, Dashboard) */
+    .property-grid, 
+    .categories-grid, 
+    .steps-grid, 
+    .agents-grid, 
+    .testimonials-track,
+    .plans-grid,
+    .about-values {
+        grid-template-columns: 1fr !important; /* Force single column */
+    }
+
+    .cat-card {
+        padding: 20px;
+    }
+
+    /* 5. Dashboard & Table Fixes */
+    .dashboard-layout {
+        grid-template-columns: 1fr !important;
+    }
+
+    .sidebar {
+        display: none; /* Hide sidebar on mobile or use a toggle */
+    }
+
+    .dash-content {
+        padding: 20px !important;
+    }
+
+    .admin-table {
+        display: block;
+        width: 100%;
+        overflow-x: auto; /* Horizontal scroll for tables only */
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* 6. Detail Page Fixes */
+    .detail-layout, .qv-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .gallery-main {
+        height: 300px;
+    }
+
+    .amenity-full-grid {
+        grid-template-columns: 1fr 1fr !important;
+    }
+
+    /* 7. Footer Fixes */
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px;
+    }
+
+    /* Disable Custom Cursor on Touch Devices */
+    .cursor, .cursor-ring {
+        display: none !important;
+    }
 }
-@media (max-width:768px){
-  .analytics-grid,
-  .about-grid,
-  .contact-grid,
-  .stats-row {
-    grid-template-columns: 1fr !important; /* single column on mobile */
-  }
-
-  .admin-table,
-  table {
-    width: 100%;
-    display: block;
-    overflow-x: auto; /* table scroll if needed */
-  }
-
-  .modal {
-    width: 90%; /* modal fits mobile screen */
-  }
-}
 
 
-/* Responsive */
-@media (max-width:1024px){
 
-.about-grid,
-.contact-grid,
-.analytics-grid{
-grid-template-columns:1fr;
-}
 
-.stats-row{
-grid-template-columns:repeat(2,1fr);
-}
-
-#recentGrid,
-#savedGrid{
-grid-template-columns:repeat(2,1fr) !important;
-}
-
-.dashboard-layout{
-grid-template-columns:1fr;
-}
-
-}
-
-/* Mobile */
-@media (max-width:768px){
-
-.stats-row,
-.analytics-grid{
-grid-template-columns:1fr;
-}
-
-#recentGrid,
-#savedGrid{
-grid-template-columns:1fr !important;
-}
-
-#dash-messages div[style*="270px"]{
-grid-template-columns:1fr !important;
-}
-
-table{
-display:block;
-overflow-x:auto;
-}
-
-.modal{
-width:90%;
-}
-
-}
 </style>
 </head>
 <body>
