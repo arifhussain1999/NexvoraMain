@@ -9,6 +9,19 @@ img{
   margin:auto;
   padding:0 20px;
 }
+html,body{
+  overflow-x: hidden;
+  max-width: 100%;
+}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+.hero{
+  width:100%;
+}
+
 :root {
   --bg: #050810;
   --surface: #0c1120;
@@ -23,6 +36,8 @@ img{
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
+  max-width:100%;
+  overflow-x:hidden;
   font-family: 'Plus Jakarta Sans', sans-serif;
   background: var(--bg);
   color: var(--text);
@@ -215,6 +230,7 @@ nav {
 
 /* ── SECTION BASE ── */
 section { padding: 90px 5%; position: relative; }
+section,div{max-width:100%;}
 .section-tag {
   display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em;
   text-transform: uppercase; color: var(--accent); margin-bottom: 0.7rem;
