@@ -1,4 +1,14 @@
+img{
+  max-width:100%;
+  height:auto;
+}
 
+.container{
+  width:100%;
+  max-width:1200px;
+  margin:auto;
+  padding:0 20px;
+}
 :root {
   --bg: #050810;
   --surface: #0c1120;
@@ -19,7 +29,7 @@ body {
   overflow-x: hidden;
   font-size: 16px;
   line-height: 1.6;
-  cursor: none;
+  cursor: pointer;
 }
 
 /* ── CUSTOM CURSOR ── */
@@ -305,7 +315,7 @@ section { padding: 90px 5%; position: relative; }
 .pricing-card:hover { transform: translateY(-6px); box-shadow: 0 28px 70px rgba(0,0,0,0.3); }
 @keyframes rotateBorder { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 .popular-badge {
-  position: absolute; top: 1.4rem; right: 1.4rem;
+  position: absolute; top: -10px; right: 1.4rem;
   background: linear-gradient(135deg, var(--accent), var(--accent2));
   color: #fff; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em;
   text-transform: uppercase; padding: 0.28rem 0.7rem; border-radius: 50px;
@@ -717,6 +727,8 @@ footer {
   .calc-grid { grid-template-columns: 1fr; }
   body { cursor: auto; }
   .cursor, .cursor-ring { display: none; }
+  .pcard-img{ height: 150px; font-size:2.5rem;}
+
 }
 /* ─────────────────────────────────────────────── Responsive Adjustments ─────────────────────────────────────────────── */
 
@@ -731,3 +743,65 @@ footer {
 .pricing-card { padding: 2.5rem 2rem; }
 
 .popular-badge { top: -16px; padding: 0.45rem 1.4rem; font-size: 1rem; } }
+
+/* MOBILE FIXES */
+@media (max-width: 768px){
+
+  /* hero */
+  .hero-title{
+    font-size:2.2rem;
+    line-height:1.2;
+  }
+
+  .hero-sub{
+    font-size:0.95rem;
+  }
+
+  .hero-btns{
+    flex-direction:column;
+    gap:12px;
+  }
+
+  /* stats */
+  .hero-stats{
+    flex-direction:column;
+    gap:1rem;
+  }
+
+  /* portfolio */
+  .portfolio-grid{
+    grid-template-columns:1fr;
+  }
+
+  /* services */
+  .grid-3{
+    grid-template-columns:1fr;
+  }
+
+  /* process */
+  .process-grid{
+    flex-direction:column;
+    align-items:center;
+  }
+
+  /* testimonials */
+  .testi-grid{
+    grid-template-columns:1fr;
+  }
+
+  /* contact buttons */
+  .contact-btns{
+    flex-direction:column;
+    gap:10px;
+  }
+
+  /* navbar */
+  nav{
+    padding:0 20px;
+  }
+
+  .logo{
+    font-size:1.3rem;
+  }
+
+}
