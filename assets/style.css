@@ -282,14 +282,13 @@ section { padding: 90px 5%; position: relative; }
 /* ── PRICING ── */
 #pricing { background: var(--surface2); }
 .pricing-grid {  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* exactly 3 cards */
-  justify-content: center;               /* grid center align */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* exactly 3 cards */
   gap: 2rem; }
 .pricing-card {
   background: var(--surface); border: 1px solid var(--border);
   border-radius: 20px; padding: 2.2rem; position: relative;
   transition: transform 0.35s cubic-bezier(.25,.46,.45,.94), box-shadow 0.35s;
-  overflow: hidden;
+  overflow: visible;
 }
 .pricing-card::after {
   content: ''; position: absolute; top: -50%; left: -50%;
