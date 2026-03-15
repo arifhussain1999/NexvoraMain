@@ -625,6 +625,36 @@ kbd{display:inline-flex;align-items:center;justify-content:center;background:var
 .video-btn{position:absolute;bottom:14px;right:14px;background:rgba(0,0,0,0.72);backdrop-filter:blur(8px);border:1px solid rgba(201,169,110,0.3);border-radius:7px;padding:8px 14px;color:var(--white);font-size:0.76rem;cursor:none;display:flex;align-items:center;gap:7px;transition:all 0.2s}
 .video-btn:hover{border-color:var(--gold);color:var(--gold)}
 
+
+/* horizontal overflow */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+@media (max-width:768px){
+  .analytics-grid,
+  .about-grid,
+  .contact-grid,
+  .stats-row {
+    grid-template-columns: 1fr !important; /* single column on mobile */
+  }
+
+  .admin-table,
+  table {
+    width: 100%;
+    display: block;
+    overflow-x: auto; /* table scroll if needed */
+  }
+
+  .modal {
+    width: 90%; /* modal fits mobile screen */
+  }
+}
+img, .pcard, .stat-card, .mini-chart {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 /* Responsive */
 @media (max-width:1024px){
 
