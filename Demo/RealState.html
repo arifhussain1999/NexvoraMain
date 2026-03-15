@@ -748,7 +748,123 @@ kbd{display:inline-flex;align-items:center;justify-content:center;background:var
     }
 }
 
+@media (max-width: 768px) {
+    /* 1. Fix Header Overlap */
+    nav {
+        flex-wrap: wrap; /* Allows items to drop to next line if needed */
+        justify-content: center !important;
+        gap: 10px;
+        padding: 10px !important;
+    }
 
+    .nav-logo {
+        font-size: 1.4rem;
+        margin-right: 10px;
+    }
+
+    .nav-actions {
+        order: 2; /* Moves icons/buttons below or beside logo neatly */
+    }
+
+    .btn-gold, .btn-primary, .btn-outline {
+        padding: 10px 15px !important; /* Smaller buttons for mobile */
+        font-size: 0.7rem !important;
+    }
+
+    /* 2. Fix Search Tabs (Buy/Rent) Cutting Off */
+    .search-tabs {
+        display: flex;
+        overflow-x: auto; /* Adds a small swipe for tabs if they are too wide */
+        width: 100%;
+        justify-content: flex-start;
+        -webkit-overflow-scrolling: touch;
+        gap: 5px;
+    }
+
+    .search-tab {
+        padding: 8px 15px !important;
+        flex-shrink: 0; /* Prevents text from squishing */
+    }
+
+    /* 3. Fix Hero Text & Stats Overlap */
+    .hero-content {
+        padding-top: 120px !important; /* Pushes content down so it doesn't hit the nav */
+    }
+
+    .hero-title {
+        font-size: 2.2rem !important; /* Smaller title so it fits */
+        margin-bottom: 15px;
+    }
+
+    .hero-stats {
+        flex-direction: column; /* Stack stats vertically to prevent right-side cutoff */
+        gap: 20px;
+        align-items: center;
+        margin-top: 30px;
+    }
+
+    .stat-item {
+        text-align: center;
+    }
+
+    /* 4. Fix Floating Buttons (Chat/Bot) */
+    .chatbot-widget, .floating-enquiry {
+        bottom: 20px;
+        right: 15px;
+        transform: scale(0.8); /* Make them slightly smaller so they don't block content */
+    }
+}
+
+@media (max-width: 768px) {
+    /* 1. Force the main container to stack vertically */
+    /* This targets the div that holds both the sidebar and the grid */
+    [class*="properties-layout"], 
+    [class*="listing-wrapper"],
+    .page-properties > div,
+    main > div.flex { 
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    /* 2. Fix the Sidebar (Refine Search) */
+    /* This makes sure it doesn't stay 'sticky' or fixed width */
+    [class*="sidebar"], 
+    [class*="filter-section"] {
+        width: 100% !important;
+        max-width: 100% !important;
+        position: relative !important;
+        top: 0 !important;
+        margin: 0 !important;
+        padding: 20px !important;
+        border: none !important;
+    }
+
+    /* 3. Fix the Content Area (where the cards are) */
+    [class*="content-area"],
+    [class*="results-section"] {
+        width: 100% !important;
+        padding: 10px !important;
+    }
+
+    /* 4. Force Grid to Single Column */
+    [class*="grid"], 
+    [class*="list-container"] {
+        display: grid !important;
+        grid-template-columns: 1fr !important; /* Forces one card per row */
+        width: 100% !important;
+        gap: 20px !important;
+    }
+
+    /* 5. Fix Property Cards */
+    .property-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
 
 
 </style>
