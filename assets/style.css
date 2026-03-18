@@ -1,3 +1,11 @@
+/* favicon */
+.logo img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  
+}
+
 img{
   max-width:100%;
   height:auto;
@@ -230,7 +238,7 @@ nav {
 
 /* ── SECTION BASE ── */
 section { padding: 90px 5%; position: relative; }
-section,div{max-width:100%;}
+
 .section-tag {
   display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em;
   text-transform: uppercase; color: var(--accent); margin-bottom: 0.7rem;

@@ -1,28 +1,40 @@
 
 // ── CUSTOM CURSOR ──
-var cursor = document.getElementById('cursor');
-var ring = document.getElementById('cursorRing');
-var mx = 0, my = 0, rx = 0, ry = 0;
-document.addEventListener('mousemove', function(e) {
-  mx = e.clientX; my = e.clientY;
-  cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
-});
-function animRing() {
-  rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
-  ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
-  requestAnimationFrame(animRing);
-}
-animRing();
+if (window.matchMedia("(pointer: fine)").matches) {
+  var cursor = document.getElementById('cursor');
+  var ring = document.getElementById('cursorRing');
 
+  if (cursor && ring) {
+    var mx = 0, my = 0, rx = 0, ry = 0;
+
+    document.addEventListener('mousemove', function(e) {
+      mx = e.clientX;
+      my = e.clientY;
+      cursor.style.left = mx + 'px';
+      cursor.style.top = my + 'px';
+    });
+
+    function animRing() {
+      rx += (mx - rx) * 0.12;
+      ry += (my - ry) * 0.12;
+      ring.style.left = rx + 'px';
+      ring.style.top = ry + 'px';
+      requestAnimationFrame(animRing);
+    }
+
+    animRing();
+  }
+}
 // ── PARTICLES ──
 (function() {
   var c = document.getElementById('particles');
-  var ctx = c.getContext('2d');
+if (!c) return;
+var ctx = c.getContext('2d');
   var W, H, pts = [];
   function resize() { W = c.width = window.innerWidth; H = c.height = window.innerHeight; }
   resize();
   window.addEventListener('resize', resize);
-  for (var i = 0; i < 60; i++) {
+  for (var i = 0; i < 40; i++) {
     pts.push({
       x: Math.random() * W, y: Math.random() * H,
       vx: (Math.random() - 0.5) * 0.3, vy: (Math.random() - 0.5) * 0.3,
@@ -46,8 +58,8 @@ animRing();
     for (var i = 0; i < pts.length; i++) {
       for (var j = i + 1; j < pts.length; j++) {
         var dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y;
-        var dist = Math.sqrt(dx*dx + dy*dy);
-        if (dist < 100) {
+        var dist = (dx*dx + dy*dy);
+        if (dist < 10000) {
           ctx.beginPath();
           ctx.moveTo(pts[i].x, pts[i].y);
           ctx.lineTo(pts[j].x, pts[j].y);
@@ -63,6 +75,7 @@ animRing();
 })();
 
 // ── CARD MOUSE GLOW ──
+if (window.matchMedia("(pointer: fine)").matches) {
 document.querySelectorAll('.card').forEach(function(card) {
   card.addEventListener('mousemove', function(e) {
     var r = card.getBoundingClientRect();
@@ -72,6 +85,7 @@ document.querySelectorAll('.card').forEach(function(card) {
     card.style.setProperty('--my', y + '%');
   });
 });
+}
 
 // ── SCROLL REVEAL ──
 var observer = new IntersectionObserver(function(entries) {
@@ -126,7 +140,7 @@ function toggleFaq(btn) {
 }
 
 // ── CALCULATOR ──
-var calcPrices = [4999, 3000, 20000, 2000, 3000, 499, 1200, 2500];
+var calcPrices = [4999, 3000, 20000, 2000, 3000, 800, 1200, 2500];
 function toggleCalc(i) {
   var cb = document.getElementById('cb' + i);
   var item = document.getElementById('ci' + i);
@@ -143,60 +157,6 @@ function toggleCalc(i) {
   el.classList.add('bump');
 }
 
-// ── ORDER FORM ──
-var API_BASE = 'http://localhost:5000/api';
-
-async function submitOrder() {
-  var name     = document.getElementById('fname').value.trim();
-  var phone    = document.getElementById('fphone').value.trim();
-  var email    = document.getElementById('femail').value.trim();
-  var type     = document.getElementById('ftype').value;
-  var desc     = document.getElementById('fdesc').value.trim();
-  var budget   = document.getElementById('fbudget').value;
-  var features = document.getElementById('ffeatures').value.trim();
-  var deadline = document.getElementById('fdeadline').value;
-
-  if (!name || !phone || !email || !type || !desc) {
-    alert('Please fill in all required fields marked with *');
-    return;
-  }
-
-  var btn = document.querySelector('.fsub');
-  btn.textContent = 'Submitting...';
-  btn.disabled = true;
-
-  try {
-    var res = await fetch(API_BASE + '/orders/submit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: name, email: email, phone: phone,
-        website_type: type, budget: budget, description: desc,
-        features: features, deadline: deadline })
-    });
-    var data = await res.json();
-
-    if (data.success) {
-      var toast = document.getElementById('toast');
-      toast.querySelector('span:last-child').textContent =
-        'Order ' + data.order_code + ' submitted! We\'ll contact you within 2 hours.';
-      toast.classList.add('show');
-      setTimeout(function() { toast.classList.remove('show'); }, 5000);
-      ['fname','fphone','femail','ftype','fbudget','fdeadline','ffeatures','fdesc'].forEach(function(id) {
-        document.getElementById(id).value = '';
-      });
-    } else {
-      alert(data.message || 'Submission failed. Please try WhatsApp.');
-    }
-  } catch (e) {
-    // Fallback: show toast anyway if API unreachable
-    var toast = document.getElementById('toast');
-    toast.classList.add('show');
-    setTimeout(function() { toast.classList.remove('show'); }, 4000);
-  } finally {
-    btn.textContent = 'Send My Order Request 🚀';
-    btn.disabled = false;
-  }
-}
 
 // ── NAV SCROLL HIGHLIGHT ──
 window.addEventListener('scroll', function() {
