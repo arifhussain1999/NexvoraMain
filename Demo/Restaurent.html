@@ -2110,15 +2110,14 @@
                                 <h3 class="room-title">Ocean Villa</h3>
                                 <p class="room-subtitle">120 m² | Ocean View</p>
                             </div>
-                            <div class="room-rating">
-                                <i data-lucide="star"></i>
-                                <i data-lucide="star"></i>
-                                <i data
-                                                            <i data-lucide="star"></i>
-                            <i data-lucide="star"></i>
-                            <i data-lucide="star"></i>
-                        </div>
-                    </div>
+                              <div class="room-rating">
+                              <i data-lucide="star"></i>
+                              <i data-lucide="star"></i>
+                              <i data-lucide="star"></i>
+                              <i data-lucide="star"></i>
+                              <i data-lucide="star"></i>
+                              </div>
+                            </div>
                 </div>
                 <div class="room-amenities">
                     <i data-lucide="wifi" title="High-Speed WiFi"></i>
@@ -4321,11 +4320,15 @@ function closeLightbox() {
 }
 
 // Close lightbox on background click
-document.getElementById('lightbox')?.addEventListener('click', (e) => {
-    if (e.target.id === 'lightbox') {
-        closeLightbox();
-    }
-});
+const lightboxEl = document.getElementById('lightbox');
+
+if (lightboxEl) {
+    lightboxEl.addEventListener('click', function(e) {
+        if (e.target.id === 'lightbox') {
+            closeLightbox();
+        }
+    });
+}
 
 // Virtual Tour
 function initVirtualTour() {
@@ -4667,13 +4670,17 @@ function escapeHtml(text) {
 
 // GSAP Animations
 function initAnimations() {
-    gsap.registerPlugin(ScrollTrigger);
-    
+    if (typeof gsap === "undefined") return;
+
+    if (typeof ScrollTrigger !== "undefined") {
+        gsap.registerPlugin(ScrollTrigger);
+    }
+
     // Animate sections on scroll
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
         const elements = section.querySelectorAll('.section-label, .section-title, .section-description, .room-card, .experience-card, .dining-card, .season-card');
-        
+
         gsap.fromTo(elements, 
             {
                 opacity: 0,
@@ -4685,28 +4692,28 @@ function initAnimations() {
                 duration: 0.8,
                 stagger: 0.1,
                 ease: 'power3.out',
-                scrollTrigger: {
+                scrollTrigger: typeof ScrollTrigger !== "undefined" ? {
                     trigger: section,
                     start: 'top 80%',
                     toggleActions: 'play none none reverse'
-                }
+                } : undefined
             }
         );
     });
-    
-    // Parallax effect for hero
+
+    // Parallax effect
     gsap.to('.hero-video', {
         yPercent: 50,
         ease: 'none',
-        scrollTrigger: {
+        scrollTrigger: typeof ScrollTrigger !== "undefined" ? {
             trigger: '.hero-section',
             start: 'top top',
             end: 'bottom top',
             scrub: true
-        }
+        } : undefined
     });
-    
-    // Stats counter animation
+
+    // Stats counter
     const statNumbers = document.querySelectorAll('.stat-number');
     statNumbers.forEach(stat => {
         const target = parseInt(stat.dataset.count);
@@ -4714,10 +4721,10 @@ function initAnimations() {
             innerHTML: target,
             duration: 2,
             snap: { innerHTML: 1 },
-            scrollTrigger: {
+            scrollTrigger: typeof ScrollTrigger !== "undefined" ? {
                 trigger: stat,
                 start: 'top 80%'
-            }
+            } : undefined
         });
     });
 }
@@ -4810,8 +4817,8 @@ document.addEventListener('keydown', (e) => {
         closeLightbox();
         closeBookingModal();
         const mobileMenu = document.getElementById('mobileMenu');
-        if (mobileMenu?.classList.contains('active')) {
-            mobileMenu.classList.remove('active');
+        if (mobileMenu && mobileMenu.classList.contains('active')) {
+    mobileMenu.classList.remove('active');
         }
     }
 });
@@ -4864,12 +4871,7 @@ function preloadImages() {
 
 preloadImages();
 
-// Service Worker registration for PWA (optional enhancement)
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js').catch(() => {
-        // Silent fail - not critical for functionality
-    });
-}
+
 
 // Analytics tracking (placeholder)
 function trackEvent(eventName, data) {
