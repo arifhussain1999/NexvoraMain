@@ -3,13 +3,14 @@ import gsap from 'gsap';
 import { Link } from 'react-router';
 
 const rotatingWords = [
-  'E-books',
-  'Courses',
-  'Webinars',
-  'Podcasts',
-  'Merchandise',
-  'Memberships',
-  'Paid Communities',
+  'Websites',
+  'SEO',
+  'Social Media',
+  'Paid Ads',
+  'Graphics',
+  'Video Editing',
+  'Apps',
+  'Digital Growth',
 ];
 
 interface HeroSectionProps {

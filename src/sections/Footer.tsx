@@ -17,23 +17,15 @@ export default function Footer() {
       <div className="max-w-[1200px] mx-auto px-6 py-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
-            <div className="relative w-10 h-10 flex items-center justify-center transition-transform group-hover:scale-110">
-              <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <linearGradient id="logo-grad-footer" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#FF9500" />
-                    <stop offset="50%" stopColor="#FF5200" />
-                    <stop offset="100%" stopColor="#FF0000" />
-                  </linearGradient>
-                </defs>
-                <path d="M25 75V25L75 75V25" stroke="url(#logo-grad-footer)" strokeWidth="12" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M35 75V35L75 75V35" stroke="url(#logo-grad-footer)" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" opacity="0.3" />
+          <Link to="/" className="flex items-center gap-3 group bg-[#F65235] px-4 py-2 rounded-xl shadow-sm hover:shadow-md transition-all">
+            <div className="relative w-8 h-8 flex items-center justify-center transition-transform group-hover:scale-110">
+              <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+                <path d="M20 80V20L80 80V20" stroke="white" strokeWidth="18" strokeLinecap="butt" strokeLinejoin="miter" />
               </svg>
             </div>
             <div className="flex flex-col">
-              <span className="text-xl font-black tracking-tight text-black italic">Nexvora</span>
-              <span className="text-[6px] font-bold tracking-[0.2em] text-gray-400 -mt-0.5 uppercase">Build. Launch. Grow.</span>
+              <span className="text-xl font-black tracking-tight text-white italic leading-none">Nexvora</span>
+              <span className="text-[6px] font-bold tracking-[0.2em] text-white/90 uppercase">Build. Launch. Grow.</span>
             </div>
           </Link>
 

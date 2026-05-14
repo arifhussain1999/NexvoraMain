@@ -52,23 +52,15 @@ export default function Navbar({ onDemoClick }: { onDemoClick?: () => void }) {
       >
         <div className="max-w-[1200px] mx-auto px-4 md:px-6 py-2.5 md:py-3 flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group shrink-0">
-            <div className="relative w-8 h-8 md:w-10 md:h-10 flex items-center justify-center transition-transform group-hover:scale-110">
-              <svg width="32" height="32" viewBox="0 0 100 100" fill="none" className="md:w-9 md:h-9">
-                <defs>
-                  <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#FF9500" />
-                    <stop offset="50%" stopColor="#FF5200" />
-                    <stop offset="100%" stopColor="#FF0000" />
-                  </linearGradient>
-                </defs>
-                <path d="M25 75V25L75 75V25" stroke="url(#logo-grad)" strokeWidth="12" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M35 75V35L75 75V35" stroke="url(#logo-grad)" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" opacity="0.3" />
+          <Link to="/" className="flex items-center gap-2 md:gap-3 group shrink-0 bg-[#F65235] px-3 md:px-4 py-1.5 md:py-2 rounded-xl shadow-sm hover:shadow-md transition-all">
+            <div className="relative w-6 h-6 md:w-8 md:h-8 flex items-center justify-center transition-transform group-hover:scale-110">
+              <svg width="32" height="32" viewBox="0 0 100 100" fill="none" className="w-full h-full">
+                <path d="M20 80V20L80 80V20" stroke="white" strokeWidth="18" strokeLinecap="butt" strokeLinejoin="miter" />
               </svg>
             </div>
             <div className="flex flex-col">
-              <span className="text-lg md:text-2xl font-black tracking-tight text-black italic leading-none">Nexvora</span>
-              <span className="text-[5px] md:text-[7px] font-bold tracking-[0.2em] text-gray-400 uppercase hidden sm:block">Build. Launch. Grow.</span>
+              <span className="text-lg md:text-xl font-black tracking-tight text-white italic leading-none">Nexvora</span>
+              <span className="text-[5px] md:text-[6px] font-bold tracking-[0.2em] text-white/90 uppercase hidden sm:block">Build. Launch. Grow.</span>
             </div>
           </Link>
 
