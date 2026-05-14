@@ -53,9 +53,10 @@ export default function Footer() {
           <div className="text-sm text-gray-500">
             <p>© 2026 NEXVORA. All rights reserved</p>
             <p className="mt-1">
-              Address: Priska Pride Tower, A-42/4, 7th Floor, Block-A, Sector 62, Noida, Uttar Pradesh - 201301
+              Address: Amravati, Durgapur, West Bengal - 713214
             </p>
             <p className="mt-1">Ph. No: +91 7811089216</p>
+            <p className="mt-1">Ph. No: +91 6295460734</p>
           </div>
 
           {/* Social Icons */}
@@ -69,7 +70,7 @@ export default function Footer() {
               <Linkedin className="w-5 h-5" />
             </a>
             <a
-              href="https://www.instagram.com/nexvoraweb.in?igsh=MTZjeTF6ZjBucTQwOQ%3D%3D&utm_source=qr"
+              href="https://www.instagram.com/nexvoraweb.in?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:text-[#F65235] hover:border-[#F65235] transition-colors"
