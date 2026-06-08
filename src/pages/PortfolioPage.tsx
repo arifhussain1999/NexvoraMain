@@ -95,7 +95,7 @@ const projects = [
     description: 'Exquisite fine dining experience with a luxury aesthetic.',
   },
   {
-    title: 'Maison de Beauté',
+    title: 'Makeup by Ruchika',
     category: 'Live Projects',
     slug: 'live-projects',
     image: 'images/makeup-demo.png',
@@ -114,20 +114,20 @@ export default function PortfolioPage() {
   const { id } = useParams();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const filteredProjects = id 
+  const filteredProjects = id
     ? projects.filter(p => p.slug === id)
     : projects;
 
-  const title = id === 'live-projects' 
-    ? 'Live Projects' 
-    : id === 'demo-websites' 
-    ? 'Demo Websites' 
-    : 'Our Portfolio';
+  const title = id === 'live-projects'
+    ? 'Live Projects'
+    : id === 'demo-websites'
+      ? 'Demo Websites'
+      : 'Our Portfolio';
 
   return (
     <div className="min-h-screen bg-white pt-24">
       <Navbar onDemoClick={() => setIsModalOpen(true)} />
-      
+
       {/* Header */}
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
@@ -139,11 +139,11 @@ export default function PortfolioPage() {
             )}
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            {id === 'live-projects' 
+            {id === 'live-projects'
               ? 'Explore the real-world applications we have built for our clients.'
               : id === 'demo-websites'
-              ? 'Browse our collection of sample designs and experimental layouts.'
-              : 'From high-converting landing pages to complex web applications, we build digital experiences that matter.'}
+                ? 'Browse our collection of sample designs and experimental layouts.'
+                : 'From high-converting landing pages to complex web applications, we build digital experiences that matter.'}
           </p>
         </div>
       </section>
@@ -152,26 +152,34 @@ export default function PortfolioPage() {
       <section className="pb-24 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           {filteredProjects.map((project, i) => (
-            <div 
-              key={i} 
+            <div
+              key={i}
               className="group cursor-pointer"
               onClick={() => project.url && window.open(project.url, '_blank')}
             >
               <div className="relative aspect-video rounded-3xl overflow-hidden mb-6 shadow-xl">
-                <img 
-                  src={project.image} 
+                <img
+                  src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className={`w-full h-full object-cover transition-transform duration-500 ${project.url ? 'group-hover:scale-110' : ''}`}
                 />
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
-                  <button className="bg-white text-black p-3 rounded-full hover:bg-[#F65235] hover:text-white transition-colors">
-                    <ExternalLink className="w-6 h-6" />
-                  </button>
-                </div>
-                {project.url && (
-                   <div className="absolute top-4 right-4 bg-[#F65235] text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-lg">
+                {project.url ? (
+                  <>
+                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+                      <button className="bg-white text-black p-3 rounded-full hover:bg-[#F65235] hover:text-white transition-colors">
+                        <ExternalLink className="w-6 h-6" />
+                      </button>
+                    </div>
+                    <div className="absolute top-4 right-4 bg-[#F65235] text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-lg">
                       LIVE
-                   </div>
+                    </div>
+                  </>
+                ) : (
+                  <div className="absolute inset-0 bg-black/30 backdrop-blur-[1.5px] flex items-center justify-center">
+                    <span className="bg-slate-950/80 backdrop-blur-md border border-white/10 text-white text-xs font-black tracking-widest uppercase px-6 py-3 rounded-full shadow-2xl">
+                      Coming Soon
+                    </span>
+                  </div>
                 )}
               </div>
               <div className="flex items-center gap-2 mb-2">
@@ -184,11 +192,11 @@ export default function PortfolioPage() {
                 {project.url && <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />}
               </h3>
               <p className="text-gray-500">{project.description}</p>
-              
+
               {/* Mobile View Live Button */}
               {project.url && (
                 <div className="mt-4 lg:hidden">
-                  <button 
+                  <button
                     className="w-full py-3 bg-blue-600/10 hover:bg-blue-600/20 text-blue-600 font-bold rounded-2xl border border-blue-600/20 flex items-center justify-center gap-2 transition-all active:scale-[0.98]"
                   >
                     View Project
@@ -210,7 +218,7 @@ export default function PortfolioPage() {
       <section className="py-24 px-6 bg-gray-50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-black mb-8">Want to see your project here?</h2>
-          <button 
+          <button
             onClick={() => setIsModalOpen(true)}
             className="pill-button-primary px-10 py-4 text-xl"
           >
