@@ -289,13 +289,15 @@ export default function PaidAdsPage() {
             <p className="text-xl text-gray-600">Built for scale, tracking, and profitability.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-10 rounded-3xl border border-gray-200 bg-gray-50 flex flex-col">
+            <div className="p-10 rounded-3xl border border-gray-200 bg-gray-50 flex flex-col hover:shadow-xl transition-shadow">
               <h3 className="text-2xl font-bold mb-4 text-black">Startup PPC</h3>
-              <div className="text-3xl font-black mb-8 text-[#F65235]">$500-$1,000<span className="text-xl text-gray-500 font-medium">/mo</span></div>
+              <div className="text-3xl font-black mb-8 text-[#F65235]">₹2,999<span className="text-xl text-gray-500 font-medium">/mo</span></div>
               <ul className="space-y-4 mb-10 flex-grow text-gray-700 font-medium">
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> Up to $10k ad spend</li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> 1-2 platforms</li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> Monthly optimization</li>
+                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> Up to ₹30,000 monthly ad spend</li>
+                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> 1 target platform (Google or Meta)</li>
+                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> Core keyword & audience targeting</li>
+                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> Professional ad copy & setup</li>
+                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> Bi-weekly email reporting</li>
               </ul>
               <button onClick={() => setIsModalOpen(true)} className="w-full py-4 border-2 border-black text-black rounded-full font-bold hover:bg-black hover:text-white transition-all">Get Started</button>
             </div>
@@ -303,24 +305,26 @@ export default function PaidAdsPage() {
             <div className="p-10 rounded-3xl border-4 border-[#F65235] bg-white relative shadow-2xl scale-105 z-10 flex flex-col">
               <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-[#F65235] text-white px-6 py-1 rounded-full text-sm font-bold uppercase tracking-wider">Most Popular</div>
               <h3 className="text-2xl font-bold mb-4 text-black">Professional PPC</h3>
-              <div className="text-3xl font-black mb-8 text-[#F65235]">$1,000-$2,500<span className="text-xl text-gray-500 font-medium">/mo</span></div>
+              <div className="text-3xl font-black mb-8 text-[#F65235]">₹5,999<span className="text-xl text-gray-500 font-medium">/mo</span></div>
               <ul className="space-y-4 mb-10 flex-grow text-gray-700 font-medium">
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> Up to $50k ad spend</li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> 2-3 platforms</li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> Weekly optimization</li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> Real-time dashboard</li>
+                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> Up to ₹1,00,000 monthly ad spend</li>
+                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> 2 target platforms (Google & Meta)</li>
+                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> Competitor research & targeting</li>
+                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> Regular A/B testing & optimization</li>
+                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> Weekly performance reports</li>
               </ul>
               <button onClick={() => setIsModalOpen(true)} className="w-full py-4 bg-[#F65235] text-white rounded-full font-bold shadow-lg hover:scale-105 transition-transform">Get Started</button>
             </div>
 
             <div className="p-10 rounded-3xl border border-gray-200 bg-gray-50 flex flex-col">
               <h3 className="text-2xl font-bold mb-4 text-black">Enterprise PPC</h3>
-              <div className="text-3xl font-black mb-8 text-[#F65235]">$2,500+<span className="text-xl text-gray-500 font-medium">/mo</span></div>
+              <div className="text-3xl font-black mb-8 text-[#F65235]">₹11,999+<span className="text-xl text-gray-500 font-medium">/mo</span></div>
               <ul className="space-y-4 mb-10 flex-grow text-gray-700 font-medium">
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> $50k+ ad spend</li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> All platforms</li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> Daily optimization</li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> A/B testing framework</li>
+                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> Unlimited monthly ad spend</li>
+                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> All major ad networks</li>
+                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> Custom growth & sales strategy</li>
+                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> Daily optimization & manual bidding</li>
+                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> Dedicated expert manager</li>
               </ul>
               <button onClick={() => setIsModalOpen(true)} className="w-full py-4 border-2 border-black text-black rounded-full font-bold hover:bg-black hover:text-white transition-all">Get Started</button>
             </div>

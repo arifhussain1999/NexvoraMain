@@ -115,11 +115,10 @@ export default function PricingSection({ onPlanSelect }: PricingSectionProps) {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`pricing-card relative group p-8 rounded-[2.5rem] transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 ${
-                plan.popular 
-                  ? 'bg-slate-900 text-white border-2 border-orange-500 shadow-xl scale-105 z-20' 
-                  : 'bg-white text-slate-900 border border-slate-100'
-              }`}
+              className={`pricing-card relative group p-8 rounded-[2.5rem] transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 ${plan.popular
+                ? 'bg-slate-900 text-white border-2 border-orange-500 shadow-xl scale-105 z-20'
+                : 'bg-white text-slate-900 border border-slate-100'
+                }`}
             >
               {plan.popular && (
                 <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-orange-600 text-white text-[10px] font-black uppercase tracking-widest px-6 py-2 rounded-full shadow-lg">
@@ -145,31 +144,28 @@ export default function PricingSection({ onPlanSelect }: PricingSectionProps) {
               <div className="space-y-4 mb-10">
                 {plan.features.map((feature, fIndex) => (
                   <div key={fIndex} className="flex items-center gap-3">
-                    <div className={`flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center ${
-                      feature.included 
-                        ? (plan.popular ? 'bg-orange-500/20 text-orange-400' : 'bg-orange-100 text-orange-600') 
-                        : 'bg-slate-100 text-slate-400'
-                    }`}>
+                    <div className={`flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center ${feature.included
+                      ? (plan.popular ? 'bg-orange-500/20 text-orange-400' : 'bg-orange-100 text-orange-600')
+                      : 'bg-slate-100 text-slate-400'
+                      }`}>
                       {feature.included ? <Check className="w-3 h-3" strokeWidth={4} /> : <X className="w-3 h-3" />}
                     </div>
-                    <span className={`text-sm ${
-                      feature.included 
-                        ? (plan.popular ? 'text-slate-200' : 'text-slate-700') 
-                        : 'text-slate-400 line-through'
-                    }`}>
+                    <span className={`text-sm ${feature.included
+                      ? (plan.popular ? 'text-slate-200' : 'text-slate-700')
+                      : 'text-slate-400 line-through'
+                      }`}>
                       {feature.text}
                     </span>
                   </div>
                 ))}
               </div>
 
-              <button 
+              <button
                 onClick={() => onPlanSelect?.(plan.name)}
-                className={`w-full py-5 rounded-2xl font-bold text-sm uppercase tracking-widest transition-all flex items-center justify-center gap-2 group ${
-                plan.popular 
-                  ? 'bg-orange-600 text-white hover:bg-orange-700 shadow-lg shadow-orange-600/20' 
+                className={`w-full py-5 rounded-2xl font-bold text-sm uppercase tracking-widest transition-all flex items-center justify-center gap-2 group ${plan.popular
+                  ? 'bg-orange-600 text-white hover:bg-orange-700 shadow-lg shadow-orange-600/20'
                   : 'bg-slate-900 text-white hover:bg-orange-600'
-              }`}>
+                  }`}>
                 {plan.buttonText}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>

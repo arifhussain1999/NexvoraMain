@@ -138,7 +138,7 @@ export default function WebDevPage() {
             >
               Get a Free Quote <ArrowRight className="w-5 h-5" />
             </button>
-            <button 
+            <button
               onClick={() => window.open('/demo/E-commerce.html', '_blank')}
               className="bg-white text-slate-900 border-2 border-slate-200 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-slate-50 transition-colors"
             >
