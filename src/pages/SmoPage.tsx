@@ -260,11 +260,13 @@ export default function SmoPage() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="p-10 rounded-3xl border border-white/10 bg-white/5 flex flex-col hover:bg-white/10 transition-colors">
               <h3 className="text-2xl font-bold mb-4 text-white">Starter SMO</h3>
-              <div className="text-4xl font-black mb-8 text-[#F65235]">$500<span className="text-xl text-gray-400 font-medium">/mo</span></div>
+              <div className="text-4xl font-black mb-8 text-[#F65235]">₹4,999<span className="text-xl text-gray-400 font-medium">/mo</span></div>
               <ul className="space-y-4 mb-10 flex-grow text-gray-300 font-medium">
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> 1-2 platforms</li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> 12-15 posts/month</li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> Basic engagement</li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235] shrink-0 mt-0.5" /> 1-2 platforms</li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235] shrink-0 mt-0.5" /> 12-15 high-quality posts/month</li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235] shrink-0 mt-0.5" /> Basic engagement & response</li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235] shrink-0 mt-0.5" /> Profile Optimization</li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235] shrink-0 mt-0.5" /> Monthly Performance Report</li>
               </ul>
               <button onClick={() => setIsModalOpen(true)} className="w-full py-4 border border-white/20 rounded-full font-bold hover:bg-white hover:text-black transition-all">Select Plan</button>
             </div>
@@ -272,23 +274,28 @@ export default function SmoPage() {
             <div className="p-10 rounded-3xl border-2 border-[#F65235] bg-white/10 relative shadow-2xl scale-105 z-10 flex flex-col">
               <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-[#F65235] text-white px-6 py-1 rounded-full text-sm font-bold uppercase tracking-wider">Professional</div>
               <h3 className="text-2xl font-bold mb-4 text-white">Pro SMO</h3>
-              <div className="text-4xl font-black mb-8 text-[#F65235]">$1,200<span className="text-xl text-gray-400 font-medium">/mo</span></div>
+              <div className="text-4xl font-black mb-8 text-[#F65235]">₹9,999<span className="text-xl text-gray-400 font-medium">/mo</span></div>
               <ul className="space-y-4 mb-10 flex-grow text-gray-300 font-medium">
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> 3-4 platforms</li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> 20-25 posts/month</li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> Full engagement mgmt</li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> Graphics creation</li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235] shrink-0 mt-0.5" /> 3-4 platforms management</li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235] shrink-0 mt-0.5" /> 20-25 high-converting posts/month</li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235] shrink-0 mt-0.5" /> Full engagement & community mgmt</li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235] shrink-0 mt-0.5" /> Custom Graphics & Reel creation</li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235] shrink-0 mt-0.5" /> Competitor Analysis</li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235] shrink-0 mt-0.5" /> Bi-weekly Strategy Meetings</li>
               </ul>
               <button onClick={() => setIsModalOpen(true)} className="w-full py-4 bg-[#F65235] text-white rounded-full font-bold hover:scale-105 transition-transform">Select Plan</button>
             </div>
 
             <div className="p-10 rounded-3xl border border-white/10 bg-white/5 flex flex-col hover:bg-white/10 transition-colors">
               <h3 className="text-2xl font-bold mb-4 text-white">Enterprise</h3>
-              <div className="text-4xl font-black mb-8 text-[#F65235]">$2,500+<span className="text-xl text-gray-400 font-medium">/mo</span></div>
+              <div className="text-4xl font-black mb-8 text-[#F65235]">₹19,999+<span className="text-xl text-gray-400 font-medium">/mo</span></div>
               <ul className="space-y-4 mb-10 flex-grow text-gray-300 font-medium">
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> All platforms</li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> 30-40 posts/month</li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> Influencer coordination</li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235] shrink-0 mt-0.5" /> All platforms (omnichannel strategy)</li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235] shrink-0 mt-0.5" /> 30-40 premium posts/month</li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235] shrink-0 mt-0.5" /> Influencer coordination & outreach</li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235] shrink-0 mt-0.5" /> Paid Social Ad Management included</li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235] shrink-0 mt-0.5" /> Custom Video Production (Shorts/Reels)</li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235] shrink-0 mt-0.5" /> 24/7 Dedicated Account Manager</li>
               </ul>
               <button onClick={() => setIsModalOpen(true)} className="w-full py-4 border border-white/20 rounded-full font-bold hover:bg-white hover:text-black transition-all">Select Plan</button>
             </div>

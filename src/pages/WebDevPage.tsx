@@ -19,6 +19,7 @@ import {
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import DemoModal from '../components/DemoModal';
+import PricingSection from '../sections/PricingSection';
 import { useState } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -393,41 +394,7 @@ export default function WebDevPage() {
       </section>
 
       {/* Section 8: Pricing */}
-      <section className="py-24 px-6 bg-[#F65235]">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-4xl md:text-6xl font-black text-white mb-6">Transparent Pricing</h2>
-          <p className="text-white/80 text-lg mb-16">Website Development Costs in India</p>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { type: "Basic Website", price: "₹25,000", features: ["5 Custom Pages", "Responsive Design", "Contact Form", "Basic SEO Setup", "Social Media Integration", "1 Month Support"] },
-              { type: "Business Website", price: "₹50,000", features: ["10 Custom Pages", "Responsive Design", "Advanced SEO Package", "CMS Integration", "E-commerce Ready", "3 Months Support"], featured: true },
-              { type: "E-commerce Store", price: "₹75,000", features: ["Unlimited Products", "Payment Gateway", "Inventory Management", "Order Tracking", "Advanced SEO", "6 Months Support"] }
-            ].map((plan, i) => (
-              <div key={i} className={`p-10 rounded-[48px] shadow-2xl transition-all duration-300 hover:scale-105 ${plan.featured ? 'bg-slate-900 text-white ring-4 ring-orange-500/20' : 'bg-white text-slate-900'}`}>
-                {plan.featured && <div className="bg-[#F65235] text-white text-[10px] font-black uppercase tracking-widest py-1 px-3 rounded-full w-fit mb-6 mx-auto">Most Popular</div>}
-                <h3 className="text-xl font-bold mb-4 opacity-80">{plan.type}</h3>
-                <div className={`text-5xl font-black mb-8 ${plan.featured ? 'text-white' : 'text-[#F65235]'}`}>{plan.price}</div>
-                <ul className="text-left space-y-4 mb-10">
-                  {plan.features.map((f, j) => (
-                    <li key={j} className="flex items-center gap-3 text-sm font-medium">
-                      <CheckCircle2 className="w-4 h-4 text-green-500" />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-                <button
-                  onClick={() => handlePlanSelect(plan.type)}
-                  className={`w-full py-4 rounded-2xl font-black transition-colors ${plan.featured ? 'bg-[#F65235] text-white hover:bg-white hover:text-slate-900' : 'bg-slate-900 text-white hover:bg-[#F65235]'}`}
-                >
-                  Get Started
-                </button>
-              </div>
-            ))}
-          </div>
-          <p className="mt-12 text-white/90 italic">Free consultation and value-based pricing available. Get your custom quote today!</p>
-        </div>
-      </section>
+      <PricingSection onPlanSelect={handlePlanSelect} />
 
       {/* Section 9: FAQ */}
       <section className="py-24 px-6 bg-white">

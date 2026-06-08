@@ -264,38 +264,57 @@ export default function WebRedesignPage() {
       </section>
 
       {/* Section 5.5: Before vs After Table */}
-      <section className="py-24 px-6 bg-slate-50">
-        <div className="max-w-5xl mx-auto">
+      <section className="py-24 px-6 bg-slate-900 relative overflow-hidden">
+        {/* Background decorations */}
+        <div className="absolute top-0 left-0 w-96 h-96 bg-[#F65235]/10 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-green-500/10 rounded-full blur-[120px] translate-x-1/2 translate-y-1/2" />
+
+        <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-4">Before vs <span className="text-[#F65235]">After Redesign</span></h2>
-            <p className="text-slate-600">See the transformation difference in measurable performance</p>
+            <span className="text-[#F65235] font-bold tracking-[0.2em] text-sm uppercase mb-4 block">The Transformation</span>
+            <h2 className="text-3xl md:text-5xl font-black text-white mb-4">Before vs <span className="text-[#F65235]">After Redesign</span></h2>
+            <p className="text-slate-400 text-lg">See the transformation difference in measurable performance</p>
           </div>
-          <div className="bg-white rounded-[40px] overflow-hidden shadow-2xl border border-slate-100">
-            <table className="w-full text-left">
-              <thead className="bg-slate-900 text-white">
-                <tr>
-                  <th className="py-6 px-8 font-bold">Feature</th>
-                  <th className="py-6 px-8 font-bold">Before (Old Site)</th>
-                  <th className="py-6 px-8 font-bold text-[#F65235]">After (Redesigned)</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100">
-                {[
-                  { f: "Mobile Responsive", old: "Not optimized", new: "Fully responsive" },
-                  { f: "Page Load Speed", old: "5-8 seconds", new: "Under 2 seconds" },
-                  { f: "SEO Structure", old: "Outdated SEO", new: "SEO Optimized" },
-                  { f: "User Navigation", old: "Confusing", new: "Intuitive UX" },
-                  { f: "Design", old: "Outdated look", new: "Modern design" },
-                  { f: "Conversion", old: "Weak CTAs", new: "Optimized CTAs" }
-                ].map((row, i) => (
-                  <tr key={i} className="hover:bg-slate-50 transition-colors">
-                    <td className="py-6 px-8 font-bold text-slate-900">{row.f}</td>
-                    <td className="py-6 px-8 text-slate-500 flex items-center gap-2"><X className="w-4 h-4 text-red-400" /> {row.old}</td>
-                    <td className="py-6 px-8 text-slate-900 font-bold flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-green-500" /> {row.new}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+
+          {/* Column Headers */}
+          <div className="grid grid-cols-3 gap-4 md:gap-6 mb-4 px-2">
+            <div className="text-sm font-bold text-slate-400 uppercase tracking-widest">Feature</div>
+            <div className="text-sm font-bold text-red-400 uppercase tracking-widest text-center">❌ Before</div>
+            <div className="text-sm font-bold text-green-400 uppercase tracking-widest text-center">✅ After</div>
+          </div>
+
+          {/* Comparison Rows */}
+          <div className="space-y-3">
+            {[
+              { f: "Mobile Responsive", old: "Not optimized", new: "Fully responsive" },
+              { f: "Page Load Speed", old: "5-8 seconds", new: "Under 2 seconds" },
+              { f: "SEO Structure", old: "Outdated SEO", new: "SEO Optimized" },
+              { f: "User Navigation", old: "Confusing", new: "Intuitive UX" },
+              { f: "Design", old: "Outdated look", new: "Modern design" },
+              { f: "Conversion", old: "Weak CTAs", new: "Optimized CTAs" }
+            ].map((row, i) => (
+              <div key={i} className="grid grid-cols-3 gap-4 md:gap-6 items-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 md:p-6 hover:bg-white/10 hover:border-[#F65235]/30 transition-all duration-300 group">
+                <div className="font-bold text-white text-sm md:text-base group-hover:text-[#F65235] transition-colors">{row.f}</div>
+                <div className="flex items-center justify-center gap-2 bg-red-500/10 border border-red-500/20 rounded-xl px-3 py-2.5">
+                  <X className="w-4 h-4 text-red-400 flex-shrink-0" />
+                  <span className="text-red-300 text-xs md:text-sm font-medium">{row.old}</span>
+                </div>
+                <div className="flex items-center justify-center gap-2 bg-green-500/10 border border-green-500/20 rounded-xl px-3 py-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-green-400 flex-shrink-0" />
+                  <span className="text-green-300 text-xs md:text-sm font-bold">{row.new}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Bottom CTA */}
+          <div className="mt-12 text-center">
+            <button
+              onClick={toggleModal}
+              className="bg-[#F65235] text-white px-10 py-4 rounded-2xl font-black text-lg hover:scale-105 transition-all shadow-lg shadow-orange-600/20 inline-flex items-center gap-2"
+            >
+              Get Your Free Audit <ArrowRight className="w-5 h-5" />
+            </button>
           </div>
         </div>
       </section>
@@ -472,9 +491,9 @@ export default function WebRedesignPage() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { type: "Quick Refresh", price: "₹20,000", features: ["Design Update Only", "Modern Visual Design", "Mobile Responsive", "Basic SEO Fixes", "7-Day Delivery"] },
-              { type: "Full Redesign", price: "₹40,000", features: ["Complete Redesign", "UX/UI Improvements", "Full SEO Overhaul", "Speed Optimization", "Content Migration", "3 Months Support"], featured: true },
-              { type: "E-commerce Redesign", price: "₹60,000", features: ["Store Redesign", "Better Product Display", "Optimized Checkout", "Advanced Analytics", "Integration Upgrades", "6 Months Support"] }
+              { type: "Quick Refresh", price: "₹4,999", features: ["Design Update Only", "Modern Visual Design", "Mobile Responsive", "Basic SEO Fixes", "7-Day Delivery"] },
+              { type: "Full Redesign", price: "₹8,999", features: ["Complete Redesign", "UX/UI Improvements", "Full SEO Overhaul", "Speed Optimization", "Content Migration", "3 Months Support"], featured: true },
+              { type: "E-commerce Redesign", price: "₹12,999+", features: ["Store Redesign", "Better Product Display", "Optimized Checkout", "Advanced Analytics", "Integration Upgrades", "6 Months Support"] }
             ].map((plan, i) => (
               <div key={i} className={`p-10 rounded-[48px] shadow-xl border border-slate-100 transition-all hover:scale-105 ${plan.featured ? 'bg-[#F65235] text-white' : 'bg-white text-slate-900'}`}>
                 <h3 className="text-xl font-bold mb-4 opacity-80">{plan.type}</h3>

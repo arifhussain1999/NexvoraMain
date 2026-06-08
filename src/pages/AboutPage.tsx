@@ -437,7 +437,7 @@ export default function AboutPage() {
             {[
               { q: "How long has NEXVORA been in business?", a: "NEXVORA was founded in 2018, giving us 7+ years of experience building websites across India." },
               { q: "Does NEXVORA work with international clients?", a: "Yes! While India-based, we proudly serve clients in the USA, UK, UAE, Singapore, and Australia." },
-              { q: "What is the typical cost of a website?", a: "Basic websites start from ₹15,000, business sites from ₹50,000, and e-commerce stores from ₹75,000." },
+              { q: "What is the typical cost of a website?", a: "Basic websites start from ₹6,999, standard sites from ₹9,999, and premium e-commerce stores from ₹14,999+." },
               { q: "Do you provide hosting and domains?", a: "Yes, we offer complete infrastructure management including domain registration, SSL, and managed hosting." },
               { q: "Will my website be mobile-friendly?", a: "Absolutely. All websites built by NEXVORA are 100% responsive and optimized for mobile devices as standard." },
               { q: "Can I update the website myself?", a: "Yes. We build using easy CMS platforms and provide free training so you can manage everything yourself." }

@@ -319,36 +319,44 @@ export default function SeoPage() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {/* Small Business */}
-            <div className="p-10 rounded-3xl border border-gray-200 bg-gray-50 flex flex-col">
+            <div className="p-10 rounded-3xl border border-gray-200 bg-gray-50 flex flex-col hover:shadow-xl transition-shadow">
               <h3 className="text-2xl font-bold mb-4 text-black">Small Business</h3>
-              <div className="text-4xl font-black mb-8 text-[#F65235]">Starts at $500<span className="text-xl text-gray-500 font-medium">/mo</span></div>
+              <div className="text-4xl font-black mb-8 text-[#F65235]">Starts at ₹4,999<span className="text-xl text-gray-500 font-medium">/mo</span></div>
               <ul className="space-y-4 mb-10 flex-grow text-gray-700 font-medium">
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> Local SEO optimization</li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> 4-6 content pieces/month</li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> GBP Management</li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235] shrink-0 mt-0.5" /> Local SEO optimization</li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235] shrink-0 mt-0.5" /> 4-6 SEO content pieces/month</li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235] shrink-0 mt-0.5" /> Google Business Profile Management</li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235] shrink-0 mt-0.5" /> Basic On-Page SEO setup</li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235] shrink-0 mt-0.5" /> Monthly Keyword Tracking</li>
               </ul>
               <button onClick={() => setIsModalOpen(true)} className="w-full py-4 border-2 border-black text-black rounded-full font-bold hover:bg-black hover:text-white transition-all">Choose Plan</button>
             </div>
             {/* Professional */}
             <div className="p-10 rounded-3xl border-4 border-[#F65235] bg-white relative shadow-2xl scale-105 z-10 flex flex-col">
-              <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-[#F65235] text-white px-6 py-1 rounded-full text-sm font-bold uppercase tracking-wider">Most Popular</div>
+              <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-[#F65235] text-white px-6 py-1 rounded-full text-sm font-bold uppercase tracking-wider shadow-md">Most Popular</div>
               <h3 className="text-2xl font-bold mb-4 text-black">Professional</h3>
-              <div className="text-4xl font-black mb-8 text-[#F65235]">$1,500+<span className="text-xl text-gray-500 font-medium">/mo</span></div>
+              <div className="text-4xl font-black mb-8 text-[#F65235]">₹9,999<span className="text-xl text-gray-500 font-medium">/mo</span></div>
               <ul className="space-y-4 mb-10 flex-grow text-gray-700 font-medium">
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> Comprehensive tech optimization</li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> 8-12 content pieces/month</li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> 20-30 outreach campaigns</li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235] shrink-0 mt-0.5" /> Comprehensive technical optimization</li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235] shrink-0 mt-0.5" /> 8-12 high-quality content pieces/month</li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235] shrink-0 mt-0.5" /> 20-30 outreach & link building campaigns</li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235] shrink-0 mt-0.5" /> Advanced Schema Markup integration</li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235] shrink-0 mt-0.5" /> In-depth Competitor Analysis</li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235] shrink-0 mt-0.5" /> Bi-weekly Strategy Calls</li>
               </ul>
               <button onClick={() => setIsModalOpen(true)} className="w-full py-4 bg-[#F65235] text-white rounded-full font-bold shadow-lg hover:scale-105 transition-transform">Choose Plan</button>
             </div>
             {/* Enterprise */}
-            <div className="p-10 rounded-3xl border border-gray-200 bg-gray-50 flex flex-col">
+            <div className="p-10 rounded-3xl border border-gray-200 bg-gray-50 flex flex-col hover:shadow-xl transition-shadow">
               <h3 className="text-2xl font-bold mb-4 text-black">Enterprise</h3>
-              <div className="text-4xl font-black mb-8 text-[#F65235]">$3,000+<span className="text-xl text-gray-500 font-medium">/mo</span></div>
+              <div className="text-4xl font-black mb-8 text-[#F65235]">₹19,999+<span className="text-xl text-gray-500 font-medium">/mo</span></div>
               <ul className="space-y-4 mb-10 flex-grow text-gray-700 font-medium">
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> Dedicated SEO strategist</li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> 20+ content pieces/month</li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235]" /> 50+ outreach campaigns</li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235] shrink-0 mt-0.5" /> Dedicated SEO Strategist & Account Manager</li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235] shrink-0 mt-0.5" /> 20+ pillar content pieces/month</li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235] shrink-0 mt-0.5" /> 50+ high-authority outreach campaigns</li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235] shrink-0 mt-0.5" /> Custom Digital PR & Media Placements</li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235] shrink-0 mt-0.5" /> Conversion Rate Optimization (CRO)</li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-[#F65235] shrink-0 mt-0.5" /> 24/7 Priority Support & Real-time Dashboard</li>
               </ul>
               <button onClick={() => setIsModalOpen(true)} className="w-full py-4 border-2 border-black text-black rounded-full font-bold hover:bg-black hover:text-white transition-all">Choose Plan</button>
             </div>
