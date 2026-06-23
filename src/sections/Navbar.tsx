@@ -164,8 +164,8 @@ export default function Navbar({ onDemoClick }: { onDemoClick?: () => void }) {
 
         {/* Mobile Menu Overlay */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-white border-t border-gray-100 rounded-b-3xl overflow-hidden animate-in slide-in-from-top duration-300 shadow-xl">
-            <div className="px-6 py-6 space-y-6">
+          <div className="lg:hidden bg-white border-t border-gray-100 rounded-b-3xl overflow-hidden animate-in slide-in-from-top duration-300 shadow-xl" style={{ maxHeight: 'calc(100vh - 80px)' }}>
+            <div className="px-6 py-6 space-y-6 overflow-y-auto" style={{ maxHeight: 'calc(100vh - 80px)', WebkitOverflowScrolling: 'touch' }}>
               {/* Primary Pages Links */}
               <div className="grid grid-cols-2 gap-4">
                 <Link 
