@@ -47,6 +47,14 @@ const projects = [
     description: 'Contemporary interior design and prototype solutions.',
   },
   {
+    title: 'Prince Restaurant',
+    category: 'Live Projects',
+    slug: 'live-projects',
+    url: 'https://www.princerestaurant.online/',
+    image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=800',
+    description: 'Premium family dining and fine cuisine restaurant in Kharagpur.',
+  },
+  {
     title: 'NestLux Real Estate',
     category: 'Demo Websites',
     slug: 'demo-websites',
