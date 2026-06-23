@@ -47,52 +47,52 @@ const projects = [
     description: 'Contemporary interior design and prototype solutions.',
   },
   {
-    title: 'E-commerce Luxury',
+    title: 'NestLux Real Estate',
     category: 'Demo Websites',
     slug: 'demo-websites',
-    url: '/demo/E-commerce.html',
-    image: 'images/ecommerce-demo.png',
-    description: 'High-end e-commerce experience with premium animations.',
+    url: '/demo/RealEstate.html',
+    image: 'images/real-estate-demo.png',
+    description: 'A premium real estate platform showcasing high-value luxury properties with advanced search, interactive maps, and AI integrations.',
   },
   {
-    title: 'Modern Interiors',
+    title: 'Spice Garden Café',
     category: 'Demo Websites',
     slug: 'demo-websites',
-    url: '/demo/Interior.html',
-    image: 'images/interior-demo.png',
-    description: 'Sophisticated interior design showcase for luxury brands.',
+    url: '/demo/Restaurant.html',
+    image: 'images/restaurant-demo.png',
+    description: 'An elegant dark-themed culinary showcase with interactive menu filtration, a reservation booking engine, and online ordering.',
   },
   {
-    title: 'Premium Resort',
+    title: 'CHANDRA Resort & Spa',
     category: 'Demo Websites',
     slug: 'demo-websites',
     url: '/demo/Resort.html',
     image: 'images/resort-demo.png',
-    description: 'Full-featured luxury resort landing page with booking system.',
+    description: 'A high-end 5-star tropical resort destination portal featuring immersive villa galleries, package bookings, and wellness service highlights.',
   },
   {
-    title: 'LearnSphere Edtech',
+    title: 'ShopHub E-Commerce',
+    category: 'Demo Websites',
+    slug: 'demo-websites',
+    url: '/demo/E-commerce.html',
+    image: 'images/ecommerce-demo.png',
+    description: 'A modern, high-conversion shopping experience with interactive carts, instant product filtering, and a sleek glassmorphic checkout flow.',
+  },
+  {
+    title: 'CW Academy Edtech',
     category: 'Demo Websites',
     slug: 'demo-websites',
     url: '/demo/Edtech.html',
     image: 'images/edtech-demo.png',
-    description: 'Next-generation educational platform for digital learning.',
+    description: 'Next-generation learning management platform with gamified leaderboards, adaptive test generators, and an interactive AI study tutor.',
   },
   {
-    title: 'Estate Luxe',
+    title: 'गृह Vastu Interiors',
     category: 'Demo Websites',
     slug: 'demo-websites',
-    url: '/demo/RealState.html',
-    image: 'images/real-estate-demo.png',
-    description: 'Premium real estate listings for high-value properties.',
-  },
-  {
-    title: 'Le Classique Dining',
-    category: 'Demo Websites',
-    slug: 'demo-websites',
-    url: '/demo/Restaurent.html',
-    image: 'images/restaurant-demo.png',
-    description: 'Exquisite fine dining experience with a luxury aesthetic.',
+    url: '/demo/Interior.html',
+    image: 'images/interior-demo.png',
+    description: 'A sophisticated e-commerce showroom for luxury handcrafted Indian furniture, curated room collections, and Vastu consultancy booking.',
   },
   {
     title: 'Makeup by Ruchika',
@@ -150,58 +150,59 @@ export default function PortfolioPage() {
 
       {/* Project Grid */}
       <section className="pb-24 px-6">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, i) => (
             <div
               key={i}
-              className="group cursor-pointer"
+              className="group bg-white border border-gray-100 rounded-[32px] p-4 shadow-[0_8px_30px_rgb(0,0,0,0.015)] hover:shadow-[0_24px_50px_rgba(0,0,0,0.06)] hover:-translate-y-2 transition-all duration-500 ease-out cursor-pointer flex flex-col justify-between"
               onClick={() => project.url && window.open(project.url, '_blank')}
             >
-              <div className="relative aspect-video rounded-3xl overflow-hidden mb-6 shadow-xl">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className={`w-full h-full object-cover transition-transform duration-500 ${project.url ? 'group-hover:scale-110' : ''}`}
-                />
-                {project.url ? (
-                  <>
-                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
-                      <button className="bg-white text-black p-3 rounded-full hover:bg-[#F65235] hover:text-white transition-colors">
-                        <ExternalLink className="w-6 h-6" />
-                      </button>
+              <div>
+                <div className="relative aspect-video rounded-2xl overflow-hidden mb-5 shadow-[0_4px_15px_rgba(0,0,0,0.02)] bg-gray-50">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className={`w-full h-full object-cover object-top transition-transform duration-700 ease-out ${project.url ? 'group-hover:scale-105' : ''}`}
+                  />
+                  {project.url ? (
+                    <>
+                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span className="bg-white text-black px-5 py-2.5 rounded-full font-bold text-xs tracking-wider uppercase shadow-xl transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 flex items-center gap-1.5">
+                          View Demo
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </span>
+                      </div>
+                      <div className="absolute top-4 right-4 bg-[#F65235] text-white text-[9px] font-black tracking-widest uppercase px-3 py-1 rounded-full shadow-lg">
+                        LIVE DEMO
+                      </div>
+                    </>
+                  ) : (
+                    <div className="absolute inset-0 bg-black/30 backdrop-blur-[1.5px] flex items-center justify-center">
+                      <span className="bg-slate-950/80 backdrop-blur-md border border-white/10 text-white text-xs font-black tracking-widest uppercase px-6 py-3 rounded-full shadow-2xl">
+                        Coming Soon
+                      </span>
                     </div>
-                    <div className="absolute top-4 right-4 bg-[#F65235] text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-lg">
-                      LIVE
-                    </div>
-                  </>
-                ) : (
-                  <div className="absolute inset-0 bg-black/30 backdrop-blur-[1.5px] flex items-center justify-center">
-                    <span className="bg-slate-950/80 backdrop-blur-md border border-white/10 text-white text-xs font-black tracking-widest uppercase px-6 py-3 rounded-full shadow-2xl">
-                      Coming Soon
+                  )}
+                </div>
+                <div className="px-1">
+                  <div className="flex items-center gap-2 mb-2.5">
+                    <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#F65235] bg-[#F65235]/8 px-2.5 py-1 rounded-full">
+                      {project.category}
                     </span>
                   </div>
-                )}
+                  <h3 className="text-xl font-black text-gray-900 mb-2 group-hover:text-[#F65235] transition-colors flex items-center gap-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-2">
+                    {project.description}
+                  </p>
+                </div>
               </div>
-              <div className="flex items-center gap-2 mb-2">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#F65235] bg-[#F65235]/10 px-3 py-1 rounded-full">
-                  {project.category}
-                </span>
-              </div>
-              <h3 className="text-2xl font-bold mb-2 group-hover:text-[#F65235] transition-colors flex items-center gap-2">
-                {project.title}
-                {project.url && <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />}
-              </h3>
-              <p className="text-gray-500">{project.description}</p>
-
-              {/* Mobile View Live Button */}
+              
               {project.url && (
-                <div className="mt-4 lg:hidden">
-                  <button
-                    className="w-full py-3 bg-blue-600/10 hover:bg-blue-600/20 text-blue-600 font-bold rounded-2xl border border-blue-600/20 flex items-center justify-center gap-2 transition-all active:scale-[0.98]"
-                  >
-                    View Project
-                    <ExternalLink className="w-4 h-4" />
-                  </button>
+                <div className="px-1 pt-3 mt-2 border-t border-gray-50 flex items-center justify-between text-xs font-bold text-gray-400 group-hover:text-[#F65235] transition-colors">
+                  <span>Explore Template</span>
+                  <ArrowRight className="w-4 h-4 transform -translate-x-1 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300" />
                 </div>
               )}
             </div>
