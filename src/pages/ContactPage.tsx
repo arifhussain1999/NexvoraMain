@@ -30,8 +30,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-black mb-1">Email Us</h3>
-                    <p className="text-gray-600">hello@nexvoraweb.in</p>
-                    <p className="text-gray-600">support@nexvoraweb.in</p>
+                    <p className="text-gray-600">nexvoraweb@gmail.com</p>
+                    
                   </div>
                 </div>
 
@@ -42,7 +42,8 @@ export default function ContactPage() {
                   <div>
                     <h3 className="text-lg font-bold text-black mb-1">Call Us</h3>
                     <p className="text-gray-600">+91 7811089216</p>
-                    <p className="text-gray-600">Mon-Fri, 9am - 6pm IST</p>
+                    <p className="text-gray-600">+91 6295460734</p>
+                    <p className="text-gray-600">Mon-Fri, 9am - 9pm IST</p>
                   </div>
                 </div>
 
@@ -53,9 +54,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="text-lg font-bold text-black mb-1">Visit Us</h3>
                     <p className="text-gray-600">
-                      Priska Pride Tower, A-42/4, 7th Floor,<br />
-                      Block-A, Sector 62, Noida,<br />
-                      Uttar Pradesh - 201301
+                      Durgapur, West Bengal, India
                     </p>
                   </div>
                 </div>
