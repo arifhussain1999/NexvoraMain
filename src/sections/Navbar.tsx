@@ -164,53 +164,91 @@ export default function Navbar({ onDemoClick }: { onDemoClick?: () => void }) {
 
         {/* Mobile Menu Overlay */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-white border-t border-gray-100 rounded-b-2xl overflow-hidden animate-in slide-in-from-top duration-300">
-            <div className="px-6 py-8 space-y-6">
-              <Link 
-                to="/" 
-                className="block text-lg font-bold text-gray-800"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Home
-              </Link>
-              <Link 
-                to="/about" 
-                className="block text-lg font-bold text-gray-800"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                About Us
-              </Link>
-              <Link 
-                to="/customise" 
-                className="block text-lg font-bold text-gray-800"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Customise
-              </Link>
-              <Link 
-                to="/blog" 
-                className="block text-lg font-bold text-gray-800"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Blog
-              </Link>
-              <Link 
-                to="/contact" 
-                className="block text-lg font-bold text-gray-800"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Contact
-              </Link>
-              <div className="pt-4 space-y-4">
-                <p className="text-xs font-black text-gray-400 uppercase tracking-widest">Our Services</p>
-                <div className="grid grid-cols-2 gap-4">
+          <div className="lg:hidden bg-white border-t border-gray-100 rounded-b-3xl overflow-hidden animate-in slide-in-from-top duration-300 shadow-xl">
+            <div className="px-6 py-6 space-y-6">
+              {/* Primary Pages Links */}
+              <div className="grid grid-cols-2 gap-4">
+                <Link 
+                  to="/" 
+                  className="flex items-center gap-2.5 text-base font-bold text-gray-800 hover:text-[#F65235] transition-colors py-1.5"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-gray-300"></span>
+                  Home
+                </Link>
+                <Link 
+                  to="/about" 
+                  className="flex items-center gap-2.5 text-base font-bold text-gray-800 hover:text-[#F65235] transition-colors py-1.5"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-gray-300"></span>
+                  About Us
+                </Link>
+                <Link 
+                  to="/customise" 
+                  className="flex items-center gap-2.5 text-base font-bold text-gray-800 hover:text-[#F65235] transition-colors py-1.5"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-gray-300"></span>
+                  Customise
+                </Link>
+                <Link 
+                  to="/blog" 
+                  className="flex items-center gap-2.5 text-base font-bold text-gray-800 hover:text-[#F65235] transition-colors py-1.5"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-gray-300"></span>
+                  Blog
+                </Link>
+                <Link 
+                  to="/contact" 
+                  className="flex items-center gap-2.5 text-base font-bold text-gray-800 hover:text-[#F65235] transition-colors py-1.5 col-span-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-gray-300"></span>
+                  Contact
+                </Link>
+              </div>
+
+              <hr className="border-gray-100" />
+
+              {/* Portfolio Section */}
+              <div className="space-y-4">
+                <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Our Portfolio</p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                   {portfolio.map(item => (
+                     <Link 
+                       key={item.label} 
+                       to={`/portfolio/${item.label.toLowerCase().replace(/ /g, '-')}`}
+                       className="flex items-center gap-3 p-3 rounded-2xl bg-gray-50/50 hover:bg-gray-50 border border-gray-100/50 transition-colors group/item"
+                       onClick={() => setMobileMenuOpen(false)}
+                     >
+                       <div className="text-gray-400 group-hover/item:text-[#F65235] transition-colors">
+                         {item.icon}
+                       </div>
+                       <div>
+                         <div className="text-sm font-bold text-gray-800">{item.label}</div>
+                         <div className="text-[10px] text-gray-400 font-medium">{item.description}</div>
+                       </div>
+                     </Link>
+                   ))}
+                </div>
+              </div>
+
+              <hr className="border-gray-100" />
+
+              {/* Services Section */}
+              <div className="space-y-4">
+                <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Our Services</p>
+                <div className="grid grid-cols-2 gap-x-4 gap-y-3">
                    {services.flatMap(s => s.items).map(item => (
                      <Link 
                        key={item} 
                        to={`/services/${item.toLowerCase().replace(/ /g, '-')}`}
-                       className="text-sm font-semibold text-gray-600"
+                       className="text-sm font-bold text-gray-600 hover:text-[#F65235] transition-colors py-1 flex items-center gap-2"
                        onClick={() => setMobileMenuOpen(false)}
                      >
+                       <span className="w-1 h-1 rounded-full bg-[#F65235]"></span>
                        {item}
                      </Link>
                    ))}
