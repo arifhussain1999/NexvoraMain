@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import ServicePage from './pages/ServicePage';
 import PortfolioPage from './pages/PortfolioPage';
@@ -19,7 +20,9 @@ import WebRedesignPage from './pages/WebRedesignPage';
 
 export default function App() {
   return (
-    <Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/services/graphic-design" element={<GraphicDesignPage />} />
       <Route path="/services/video-editing" element={<VideoEditingPage />} />
@@ -39,7 +42,8 @@ export default function App() {
       <Route path="/refund-policy" element={<LegalPage pageId="refund-policy" />} />
       <Route path="/terms-and-conditions" element={<LegalPage pageId="terms-and-conditions" />} />
       <Route path="/privacy-policy" element={<LegalPage pageId="privacy-policy" />} />
-    </Routes>
+      </Routes>
+    </>
   );
 }
 
