@@ -45,7 +45,7 @@ export default function AboutPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   useEffect(() => {
-    document.title = "About NEXVORA | #1 Web Development Company in India | 500+ Projects Delivered";
+    document.title = "About NEXVORA | Best Web Development & Digital Marketing Company in Durgapur & Kolkata, West Bengal";
     window.scrollTo(0, 0);
 
     const ctx = gsap.context(() => {
