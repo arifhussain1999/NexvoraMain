@@ -8,6 +8,7 @@ import LegalPage from './pages/LegalPage';
 import ContactPage from './pages/ContactPage';
 import AboutPage from './pages/AboutPage';
 import BlogPage from './pages/BlogPage';
+
 import CustomisePage from './pages/CustomisePage';
 import GraphicDesignPage from './pages/GraphicDesignPage';
 import VideoEditingPage from './pages/VideoEditingPage';
@@ -36,6 +37,7 @@ export default function App() {
       <Route path="/portfolio/testimonials" element={<TestimonialsPage />} />
       <Route path="/portfolio/:id" element={<PortfolioPage />} />
       <Route path="/blog" element={<BlogPage />} />
+
       <Route path="/about" element={<AboutPage />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/customise" element={<CustomisePage />} />

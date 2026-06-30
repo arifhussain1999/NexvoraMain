@@ -202,7 +202,7 @@ export default function Navbar({ onDemoClick }: { onDemoClick?: () => void }) {
                 </Link>
                 <Link 
                   to="/contact" 
-                  className="flex items-center gap-2.5 text-base font-bold text-gray-800 hover:text-[#F65235] transition-colors py-1.5 col-span-2"
+                  className="flex items-center gap-2.5 text-base font-bold text-gray-800 hover:text-[#F65235] transition-colors py-1.5"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-gray-300"></span>

@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Calendar, User, ArrowRight, Search } from 'lucide-react';
 import Navbar from '../sections/Navbar';
 import Footer from '../sections/Footer';
@@ -5,43 +6,42 @@ import Footer from '../sections/Footer';
 const blogPosts = [
   {
     id: 1,
-    title: 'How to Build a High-Converting Creator Website',
-    excerpt: 'Learn the essential elements that turn casual visitors into loyal customers and community members...',
-    category: 'Guides',
-    author: 'Admin',
-    date: 'Oct 15, 2024',
-    image: 'images/blog-1.jpg',
+    title: 'The Digital Shift: How Durgapur & Asansol Businesses Are Dominating Online Markets',
+    excerpt: 'From heavy engineering industrial hubs to digital commerce leaders, discover why local startups, SME manufacturers, and local retail brands in Paschim Bardhaman are investing in custom website development to scale beyond local boundaries.',
+    category: 'Business Growth',
+    author: 'NEXVORA Research',
+    date: 'June 30, 2026',
+    image: 'images/build-brand.jpg',
   },
   {
     id: 2,
-    title: 'Top 5 Digital Products to Sell in 2026',
-    excerpt: 'From e-books to exclusive communities, discover which digital assets are driving the most revenue this year...',
-    category: 'Strategy',
-    author: 'Expert',
-    date: 'Oct 12, 2024',
-    image: 'images/blog-2.jpg',
+    title: 'Why Generic Website Templates Fail Startups in Durgapur & Asansol',
+    excerpt: 'Cheap templates might look easy, but they severely impact your local SEO and page loading speeds. Learn why custom-coded React and Next.js sites are the secret weapon for businesses in Durgapur and Kolkata to stand out from the competition.',
+    category: 'Web Tech',
+    author: 'Tech Lead',
+    date: 'June 25, 2026',
+    image: 'images/tech-stack.avif',
   },
   {
     id: 3,
-    title: 'The Future of SEO for Independent Creators',
-    excerpt: 'Search algorithms are changing. Here is how you can stay ahead of the curve and keep your traffic growing...',
-    category: 'SEO',
-    author: 'NEXVORA',
-    date: 'Oct 10, 2024',
-    image: 'images/blog-3.jpg',
-  },
-  {
-    id: 4,
-    title: 'Maximizing Your Reach with Paid Ads',
-    excerpt: 'A comprehensive guide to scaling your audience using targeted ad campaigns on Instagram and Google...',
-    category: 'Marketing',
-    author: 'Team',
-    date: 'Oct 08, 2024',
-    image: 'images/blog-1.jpg',
+    title: 'Coaching & Education Centres in Durgapur: Scaling via EdTech Solutions',
+    excerpt: 'Durgapur is one of West Bengal\'s largest educational hubs. Discover how modern coaching institutes are using custom-designed student portals, booking platforms, and customized Learning Management Systems (LMS) to double enrollment rates.',
+    category: 'EdTech',
+    author: 'Education Specialist',
+    date: 'June 20, 2026',
+    image: 'images/edtech-demo.png',
   },
 ];
 
 export default function BlogPage() {
+  useEffect(() => {
+    document.title = "NEXVORA Blog | Insights on Website Development & SEO in Durgapur & Kolkata";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', 'Read research-based articles by NEXVORA on website development, e-commerce growth, educational technology, and SEO strategies for businesses in Durgapur, Asansol, and Kolkata.');
+    }
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
